@@ -24,7 +24,7 @@ instance Permutable1 f => Permutable (Mu f) where
   perm p (In s) = In $ perm1 perm p s
 
 instance Nominal1 f => Nominal (Mu f) where
-  (#) n (In s) = _
-  supp (In s) = _
-  supply (In s) = _
-  equiv (In s) n1 n2 = _
+  (#) n (In s) = sep1 (#) n s
+  supp (In s) = supp1 supp s
+  supply (In s) = supply1 supply s
+  equiv (In s) = equiv1 equiv s
